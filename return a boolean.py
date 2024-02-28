@@ -41,3 +41,23 @@ def employee_check(work_hours):
             pass
     return (employee_of_month,current_max)
 print(employee_check(work_hours))
+
+
+def player_guess():
+    guess = ''
+    while guess not in ['0','1','2']:
+        guess = input("pick a number:0,1, or 2: ")
+    return int(guess)
+print(player_guess())
+
+def check_guess(mylist,guess):
+    if mylist[guess] == 'o':
+        print('correct guess')
+    else:
+        print('wrong better luck next time')
+        print(mylist)
+
+mylist = ['','o','']
+mixedup_list = shuffle_list(mylist)
+guess = player_guess()
+print(check_guess(mixedup_list,guess))
